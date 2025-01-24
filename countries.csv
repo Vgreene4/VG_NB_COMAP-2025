@@ -29,7 +29,7 @@ BIH,Bosnia and Herzegovina
 BOT,Botswana
 BRA,Brazil
 IVB,British Virgin Islands
-BRU,Brunei Darussalam
+BRU,Brunei
 BUL,Bulgaria
 BUR,Burkina Faso
 BDI,Burundi
@@ -58,7 +58,7 @@ CUR,Curaçao
 CYP,Cyprus
 CZE,Czechia
 TCH,Czechoslovakia
-PRK,Democratic People's Republic of Korea
+PRK,North Korea
 COD,Democratic Republic of the Congo
 DEN,Denmark
 DJI,Djibouti
@@ -109,7 +109,7 @@ INA,Indonesia
 IFR,International Federation Representative
 IRQ,Iraq
 IRL,Ireland
-IRI,Islamic Republic of Iran
+IRI,Iran
 IOM,Isle of Man
 ISR,Israel
 ITA,Italy
@@ -119,14 +119,14 @@ JER,Jersey
 JOR,Jordan
 KAZ,Kazakhstan
 KEN,Kenya
-KSA,Kingdom of Saudi Arabia
+KSA,Saudi Arabia
 KIR,Kiribati
 COR,Korea Team
 KOS,Kosovo
 KUW,Kuwait
 KGZ,Kyrgyzstan
 RNN,La Réunion
-LAO,Lao People's Democratic Republic
+LAO,Laos
 LAT,Latvia
 LBN,Lebanon
 LES,Lesotho
@@ -183,7 +183,7 @@ PLE,Palestine
 PAN,Panama
 PNG,Papua New Guinea
 PAR,Paraguay
-CHN,People's Republic of China
+CHN,China
 PER,Peru
 PHI,Philippines
 POL,Poland
@@ -191,12 +191,12 @@ POR,Portugal
 PUR,Puerto Rico
 QAT,Qatar
 EOR,Refugee Olympic Team
-KOR,Republic of Korea
-MDA,Republic of Moldova
+KOR,Korea
+MDA,Moldova
 RHO,Rhodesia
 ROC,ROC
 ROU,Romania
-RUS,Russian Federation
+RUS,Russia
 RWA,Rwanda
 SAA,Saar
 SKN,Saint Kitts and Nevis
@@ -232,7 +232,7 @@ SUR,Suriname
 SVB,Svalbard
 SWE,Sweden
 SUI,Switzerland
-SYR,Syrian Arab Republic
+SYR,Syria
 TJK,Tajikistan
 THA,Thailand
 BAH,The Bahamas
@@ -243,7 +243,7 @@ TKL,Tokelau
 TGA,Tonga
 TTO,Trinidad and Tobago
 TUN,Tunisia
-TUR,Türkiye
+TUR,Turkey
 TKM,Turkmenistan
 TKS,Turks and Caicos Islands
 TUV,Tuvalu
@@ -252,7 +252,7 @@ UKR,Ukraine
 EUN,Unified Team
 UAE,United Arab Emirates
 UAR,United Arab Republic
-TAN,United Republic of Tanzania
+TAN,Tanzania
 USA,United States
 ISV,United States Virgin Islands
 UNK,Unknown
