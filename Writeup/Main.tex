@@ -73,8 +73,27 @@ most up to date contest information.}
 
 \section{Data Cleanup}
 
-Before beginning any analysis of the data, we had to clean and organize the data. 
+Before beginning any analysis of the data, we had to clean and organize the data provided for this problem. 
 
+
+\subsection{Considered Countries}
+Due to a myriad of historic and geopolitical reasons, countries once prevalent at the Olympics (e.g., the Soviet Union) no longer exist, others have split (e.g., Czechoslovakia), split and then re-merged (e.g., East and West Germany), and yet others have changed their names (e.g., Rhodesia to Zimbabwe). 
+Moreover, there are several multinational teams, such as the mixed team (MIX) in the 1896, 1900, and 1904 Olympics, the West Indies Federation (WIF) in the 1960 Olympics, and the Unified Team (EUN), consisting of multiple former Soviet states, at the 1992 Olympics. 
+To create a working list of states to consider for our analysis, without prejudice to current or past geopolitical events, for our analysis we only consider countries for each unique three-letter country code (NOC) in the \verb|summerOly_athletes.csv| file.
+For the purposes of this report, we use "country" to refer to those states. 
+
+The primary drawbacks of this approach is that it ignores the continuity in the athletic ability of several countries (e.g., Ukraine, Czechia), but such changes to the geographical base from which to draw athletes intrinsically kneecaps any attempt at continuity in these situations. 
+Perhaps, with substantially more time and data, this could be competently addressed, but for the analysis we present we consider them as separate nations.
+
+We will be considering a total of 232 countries, each with a distinct NOC code which we will use for our analysis.
+
+
+
+
+
+
+Question, should we include countries that have only competed at one olympics in our analysis? 
+Question, should we include pre WW1 olympics? pre ww2?
 
 
 
