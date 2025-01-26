@@ -2,6 +2,53 @@ import pandas as pd
 import numpy as np
 
 
+athletes = pd.read_csv("Clean Data/summerOly_athletes_clean.csv")
+country_list = pd.read_csv("Clean Data/countries.csv", index_col=False)
+NOC_list = country_list["NOC"]
+
+def remove_pre_ww1 (athletes):
+    post_ww1 = athletes[athletes.Year >= 1920].copy()
+    post_ww1.sort_values(by=['Year', 'NOC'], inplace=True, ignore_index=True)
+    return post_ww1
+
+def count_years (athletes, NOC_list):
+    count_dict = dict()
+    for code in NOC_list:
+        country_data = athletes[athletes.NOC == code]
+        years = country_data["Year"].unique()
+        count_dict[code] = years
+    return count_dict
+
+def drop_countries (threshold, athlete_list, country_list):
+    drop_list = []
+    count_dict = count_years(athlete_list, country_list['NOC'])
+    for country, count in count_dict.items():
+        if len(count) <= threshold:
+            drop_list.append(country)
+    drop_list.sort()
+    for code in drop_list:
+        country_list = country_list[country_list.NOC != code]
+        athlete_list = athlete_list[athlete_list.NOC != code]
+    country_list.sort_values(by=['NOC'], inplace=True, ignore_index=True)
+    athlete_list.sort_values(by=['Year', 'NOC'], inplace=True, ignore_index=True)
+    return athlete_list, country_list, drop_list
+
+athletes_post_ww1 = remove_pre_ww1(athletes)
+
+clean_athletes, clean_countries, drop_list = drop_countries(1, athletes_post_ww1, country_list)
+
+clean_athletes.to_csv('Clean Data/summerOly_athletes_cropped.csv', index=False)
+clean_countries.to_csv('Clean Data/summerOly_countries_cropped.csv', index=False)
+
+
+
+
+
+
+
+
+
+
 '''
 Takes in the athletes file and the list of countries/NOC names we found online,
 and replaces the names in the athletes file to reflect the countries list, also
@@ -10,7 +57,8 @@ and the changes as CSV files
 '''
 
 
-athletes = pd.read_csv("2025_Problem_C_Data/summerOly_athletes.csv")
+'''
+
 country_codes = pd.read_csv("countries.csv", index_col=False)
 
 NOC_dict = dict(zip(country_codes["NOC"], country_codes["Country"]))
@@ -38,3 +86,8 @@ print(athletes_df)
 
 np.savetxt("name_changes.csv", changes_unique, fmt="%s", delimiter=",")
 athletes_df.to_csv('summerOLY_athletes_clean.csv', index=False)
+
+'''
+
+
+

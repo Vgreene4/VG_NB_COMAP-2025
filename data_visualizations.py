@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import matplotlib.pyplot as plt
 
 
@@ -42,6 +41,10 @@ def graphYear(year, medal_list):
 
 
 # graphYear(1900, medals)
-graphCountry('France', medals)
+# graphYear(1896, medals)
+# graphYear(1904, medals)
+# graphYear(1908, medals)
+
+graphCountry('United States', medals)
 
 
