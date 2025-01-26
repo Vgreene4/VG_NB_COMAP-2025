@@ -31,6 +31,7 @@ def drop_countries (threshold, athlete_list, country_list):
         athlete_list = athlete_list[athlete_list.NOC != code]
     country_list.sort_values(by=['NOC'], inplace=True, ignore_index=True)
     athlete_list.sort_values(by=['Year', 'NOC'], inplace=True, ignore_index=True)
+    
     return athlete_list, country_list, drop_list
 
 athletes_post_ww1 = remove_pre_ww1(athletes)
@@ -39,6 +40,8 @@ clean_athletes, clean_countries, drop_list = drop_countries(1, athletes_post_ww1
 
 clean_athletes.to_csv('Clean Data/summerOly_athletes_cropped.csv', index=False)
 clean_countries.to_csv('Clean Data/summerOly_countries_cropped.csv', index=False)
+
+
 
 
 
