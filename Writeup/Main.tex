@@ -72,11 +72,21 @@ most up to date contest information.}
 
 \section{Introduction}
 
+We made a model that, from a 7 dimensional feature vector, attempts to predict a 4 dimensional value vector of the medals.
+We take both the year and the country, along with other features, as inputs.
 
-\section{Data Cleanup}
+We used multiple models — a tree, and a neural network — to approximate a 
+
+In section 2, we discuss the data, and what we did with 
+
+In section 3, we present our models
+
+In section 4, we analyze the performance of our models and conclude our report.
+
+\section{Data}
 
 Before beginning any analysis of the data, we had to clean and organize the data provided for this problem. 
-
+This consisted of four distinct parts: (1) creating a list of countries to consider, (2) cleaning the data, (3) sorting and reducing the data to see what is valuable, and (4) organizing the data for analysis.
 
 \subsection{Considered Countries}
 Due to a myriad of historic and geopolitical reasons, countries once prevalent at the Olympics (e.g., the Soviet Union) no longer exist, others have split (e.g., Czechoslovakia), split and then re-merged (e.g., East and West Germany), and yet others have changed their names (e.g., Rhodesia to Zimbabwe). 
@@ -86,26 +96,58 @@ For the purposes of this report, we use "country" to refer to those states.
 
 The primary drawbacks of this approach is that it ignores the continuity in the athletic ability of several countries (e.g., Ukraine, Czechia), but such changes to the geographical base from which to draw athletes intrinsically kneecaps any attempt at continuity in these situations. 
 Perhaps, with substantially more time and data, this could be competently addressed, but for the analysis we present we consider them as separate nations.
-
-As such, we will be considering a total of 232 countries, each with a distinct NOC code which we will use for our analysis. 
-
+% However, there are two cases, where, for all intents and purposes, a team simply switched names: Rhodesia (RHO) to Zimbabwe (ZIM), and the Russian Federation (RUS) to the Russian Olympic Committee (ROC)
 
 
+\subsection{Cleaning Data}
+In the provided data sets, there were several issues which needed to be addressed.
+Immediately noticeable were several issues in the \verb|summerOly_athletes.csv| file, including commas in the \verb|Events| category and several nonsensical \verb|Team| names. 
+For instance, the Austrian sailer Harald Musil supposedly competed for the team \verb|30. Februrar| and \verb|May-by 1960|. 
+To circumvent these issues, we did not consider the \verb|Team| data in our analysis, and relied purely on the NOC country acronyms.
+
+The NOC acronyms, however, were missing from the \verb|summerOly_medal_counts.csv| and \verb|summerOly_hosts.csv| files. 
+To redress this, we simply mapped each country name to the respective NOC in Python. 
+Luckily, the rest of the data that we used in our analysis (see sections 2.4 and 3 below) was already clean.
+
+\subsection{Data Pruning}
+After some initial investigations of the data, we noted that the results for the early Olympics (pre-WW1) were markedly different from those later on.
+Some notable differences included the host country fielding substantially more athletes than the visiting nations, and substantially fewer countries competeting.
+As such, we felt it prudent to ignore all data before 1920.
+
+Similarly, the existence of one-off multinational teams (notably WIF and EUN, as mentioned above), would serve little use in any prediction of future medals, so we likewise chose to drop any teams which have only competed for one year between 1920 and 2024, inclusive.
+See Table 1 for a list of the countries that were pruned. 
+While the reason for not including most are self-evident — clearly, Newfoundland is not a sovereign state sending athletes to the Olympics — three are particularly interesting.
+The teams ``Individual Neutral Athletes,'' ``Unified Team,'' and ``Russian Olympic Committee'' are all primarily or wholly Russian. After pruning, we were left with 218 nations to consider. 
+
+\begin{table}[h]
+\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		NOC & Name\\
+		\hline
+		\hline
+		AIN & Individual Neutral Athletes\\\hline
+		ANZ & Australasia\\\hline
+		BOH & Bohemia \\\hline
+		CRT & Crete\\\hline
+		EUN & Unified Team\\\hline
+		NBO & North Borneo\\\hline
+		NFL & Newfoundland\\\hline
+		RHO & Rhodesia\\\hline
+		ROC & Russian Olympic Committee\\\hline
+		SAA & Saar\\\hline
+		UAR & United Arab Republic \\\hline
+		UNK & Unknown\\\hline
+		WIF & West Indies Federation\\\hline
+		YMD & South Yemen\\\hline
+	\end{tabular}
+	\caption{Countries that were dropped for competing a) only once or b) only before 1920}
+
+\end{table}
 
 
 
-Question, should we include countries that have only competed at one olympics in our analysis? 
-Question, should we include pre WW1 Olympics? pre ww2?
-
-
-
-\section{Initial Observations}
-
-
-
-
-
-
+\subsection{Data Organization}
 
 
 
