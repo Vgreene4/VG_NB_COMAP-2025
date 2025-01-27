@@ -81,6 +81,10 @@ In section 3, we present our models
 
 In section 4, we analyze the performance of our models and conclude our report.
 
+
+\subsection{Model Assumptions}
+We assume that time series is not critical 
+
 \section{Data}
 
 Before beginning any analysis of the data, we had to clean and organize the data provided for this problem. 
@@ -147,10 +151,33 @@ The teams ``Individual Neutral Athletes,'' ``Unified Team,'' and ``Russian Olymp
 
 \subsection{Data Organization}
 The basic strategy for our models is to map each country-year pair to their score — measured in amount of gold, silver, bronze, and total medals.
+Considering each unique country-year pair in our data set (e.g., we are not considering the Soviet Union in 2024 to be a data point), we arrive at a total of $N=3083$ separate data points.
+
 
 
 To build our models, we first organized our data into features (or $\bm{x}_i$ vectors) and values (or $\bm{y}_i$ vectors).
 
+
+\begin{equation*}
+	\bm{x}_i = \begin{bmatrix}
+	\text{Country}\\
+	\text{Year}\\
+	\text{\# Athletes}\\
+	\text{Host}\\
+	\text{\# Events}\\
+	\text{\# Sports}\\
+	\text{\# Disciplines}
+	\end{bmatrix}
+	\hspace{8mm}
+	\text{and}
+	\hspace{8mm}
+	\bm{y}_i = \begin{bmatrix}
+		\text{\# Golds}\\
+		\text{\# Silvers}\\
+		\text{\# Bronzes}\\
+		\text{\# Total Medals}
+	\end{bmatrix}.
+\end{equation*}
 
 
 
