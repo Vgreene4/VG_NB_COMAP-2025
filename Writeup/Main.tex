@@ -1,7 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% MCM/ICM LaTeX Template %%
-%% 2025 MCM/ICM           %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[12pt]{article}
 \usepackage{geometry}
 \geometry{left=1in,right=0.75in,top=1in,bottom=1in}
@@ -16,6 +13,7 @@
 \usepackage{newtxtext}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{newtxmath} % must come after amsXXX
+\usepackage{bm}
 
 \usepackage[pdftex]{graphicx}
 \usepackage{xcolor}
@@ -148,6 +146,10 @@ The teams ``Individual Neutral Athletes,'' ``Unified Team,'' and ``Russian Olymp
 
 
 \subsection{Data Organization}
+The basic strategy for our models is to map each country-year pair to their score — measured in amount of gold, silver, bronze, and total medals.
+
+
+To build our models, we first organized our data into features (or $\bm{x}_i$ vectors) and values (or $\bm{y}_i$ vectors).
 
 
 
